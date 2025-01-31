@@ -1,6 +1,5 @@
-# Simulación de un Robot Explorador en un Tablero con Obstáculos
+# Simulation of a Robot Explorer on a Board with Obstacles
 
-Próximamente más actualizaciones . . .
 <!--
 En inglés 
 -->
