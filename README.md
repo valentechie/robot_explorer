@@ -1,6 +1,5 @@
 # Simulation of a Robot Explorer on a Board with Obstacles
 
-<!--
 ## Installation
 
 1. Clone the repository:
@@ -14,5 +13,3 @@ g++ robot_simulation.cpp -o robot_simulation
 
 4. Run the project:
 ./robot_simulation
-
--->
