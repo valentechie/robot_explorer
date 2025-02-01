@@ -3,9 +3,8 @@
 ## Introduction
 C++ program that simulates a robot moving around a board. 
 
-This project was developed as the final practice for the Fundamentos de la Programación at URJC. It allowed me to apply the concepts learned during the course and deepen my understanding of C++ programming.
-
 ## Demo
+
 
 ## Installation
 
@@ -25,7 +24,5 @@ This project was developed as the final practice for the Fundamentos de la Progr
 
     ./robot_simulation
 
-## Conclusion
-
----
-**Este proyecto fue practica final de la asignatura de fundamentos de programación en la universidad**
+## Project Context:
+This project was developed as the final practice for the Fundamentos de la Programación at URJC. It allowed me to apply the concepts learned during the course and deepen my understanding of C++ programming.
