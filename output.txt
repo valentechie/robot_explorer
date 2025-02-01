@@ -7,5 +7,5 @@
 . . # . . . * * . 
 . . . . . . * * . 
 . . . . . # * * . 
-Cells travelled: 43
+Occupied cells: 43
 Free cells: 31
