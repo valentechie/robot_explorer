@@ -26,8 +26,8 @@ struct Obstacle {
 
 void readFile(const std::string&, int&, int&, int&, int&, Obstacle*&, int&);
 void createBoard(Board&);
-void viewBoard(Board&);
-bool validateMovement(Board&, int, int);
+void displayBoard(Board&);
+bool validPosition(Board&, int, int);
 bool possibleMovement(Board&, Robot&);
 void moveRobot(Board&, Robot&);
 int currentState(Board&, char);
@@ -36,60 +36,60 @@ void releaseMemory(Board&, Obstacle*);
 int main() {
     Obstacle* obstacles = nullptr; 
     int num_obstacles = 0;
-    Board space;
+    Board mymap;
     int n_rows = 0, m_columns = 0, robot_rows = 0, robot_columns = 0;
     
     std::string archive = "input.txt";
     readFile(archive, n_rows, m_columns, robot_rows, robot_columns, obstacles, num_obstacles);
     
-    space.rows = n_rows;
-    space.columns = m_columns;
+    mymap.rows = n_rows;
+    mymap.columns = m_columns;
 
-    createBoard(space);
+    createBoard(mymap);
     
-    space.board[robot_rows][robot_columns] = 'R';
+    mymap.board[robot_rows][robot_columns] = 'R';
     Robot robot = {robot_rows, robot_columns};
     
     for (int i = 0; i < num_obstacles; i++) {
         if (obstacles[i].row != robot.Rx || obstacles[i].column != robot.Ry) {
-            space.board[obstacles[i].row][obstacles[i].column] = '#';
+            mymap.board[obstacles[i].row][obstacles[i].column] = '#';
         } else {
             std::cerr << "Error: An obstacle cannot be in the same position as the robot.\n";
-            releaseMemory(space, obstacles);
+            releaseMemory(mymap, obstacles);
             return 0;
         }
     }
 
-    while (possibleMovement(space, robot)) {
-        viewBoard(space);
-        std::cout << "Cells travelled: " << currentState(space, '*') << std::endl;
-        std::cout << "Free cells: " << currentState(space, '.') << std::endl;
+    while (possibleMovement(mymap, robot)) {
+        displayBoard(mymap);
+        std::cout << "Occupied cells: " << currentState(mymap, '*') << std::endl;
+        std::cout << "Free cells: " << currentState(mymap, '.') << std::endl;
 
         std::cout << "Press Enter to continue . . .";
         std::cin.get();
-        system("clear"); // or "cls" for windows
+        system("cls"); // or "cls" for windows
 
-        moveRobot(space, robot);
+        moveRobot(mymap, robot);
     }
 
-    viewBoard(space);
-    std::cout << "Cells travelled: " << currentState(space, '*') << std::endl;
-    std::cout << "Free cells: " << currentState(space, '.') << std::endl;
+    displayBoard(mymap);
+    std::cout << "Occupied cells " << currentState(mymap, '*') << std::endl;
+    std::cout << "Free cells: " << currentState(mymap, '.') << std::endl;
 
     std::ofstream write_output ("output.txt");
     assert(write_output.is_open());
-    for (int i = 0; i < space.rows; i++) {
-        for (int j = 0; j < space.columns; j++) {
-            write_output << space.board[i][j] << " ";
+    for (int i = 0; i < mymap.rows; i++) {
+        for (int j = 0; j < mymap.columns; j++) {
+            write_output << mymap.board[i][j] << " ";
         }
         write_output << std::endl;
     }
 
-    write_output << "Cells travelled: " << currentState(space, '*') << std::endl;
-    write_output << "Free cells: " << currentState(space, '.') << std::endl;
+    write_output << "Occupied cells: " << currentState(mymap, '*') << std::endl;
+    write_output << "Free cells: " << currentState(mymap, '.') << std::endl;
     write_output.close();
     
-    releaseMemory(space, obstacles);
+    releaseMemory(mymap, obstacles);
     return 0;
 }
 
@@ -173,7 +173,7 @@ void createBoard(Board& map) {
     }
 }
 
-void viewBoard(Board& map) {
+void displayBoard(Board& map) {
     for(int i = 0; i < map.rows; i++) {
         for(int j = 0; j < map.columns; j++) {
             std::cout << map.board[i][j] << " ";
@@ -182,7 +182,7 @@ void viewBoard(Board& map) {
     }
 }
 
-bool validateMovement(Board& map, int row, int column) {
+bool validPosition(Board& map, int row, int column) {
     if (row < 0 || row >= map.rows || column < 0 || column >= map.columns) {
         return false;
     }
@@ -194,10 +194,10 @@ bool validateMovement(Board& map, int row, int column) {
 }
 
 bool possibleMovement(Board& map, Robot& robot) {
-    return (validateMovement(map, robot.Rx - 1, robot.Ry) || validateMovement(map, robot.Rx + 1, robot.Ry) ||  
-            validateMovement(map, robot.Rx, robot.Ry - 1) || validateMovement(map, robot.Rx, robot.Ry + 1) ||  
-            validateMovement(map, robot.Rx - 1, robot.Ry - 1) || validateMovement(map, robot.Rx - 1, robot.Ry + 1) ||
-            validateMovement(map, robot.Rx + 1, robot.Ry - 1) || validateMovement(map, robot.Rx + 1, robot.Ry + 1));
+    return (validPosition(map, robot.Rx - 1, robot.Ry) || validPosition(map, robot.Rx + 1, robot.Ry) ||  
+            validPosition(map, robot.Rx, robot.Ry - 1) || validPosition(map, robot.Rx, robot.Ry + 1) ||  
+            validPosition(map, robot.Rx - 1, robot.Ry - 1) || validPosition(map, robot.Rx - 1, robot.Ry + 1) ||
+            validPosition(map, robot.Rx + 1, robot.Ry - 1) || validPosition(map, robot.Rx + 1, robot.Ry + 1));
 }
 
 void moveRobot(Board& map, Robot& robot) {
@@ -210,7 +210,7 @@ void moveRobot(Board& map, Robot& robot) {
         new_row = robot.Rx + movements[i][0];
         new_column = robot.Ry + movements[i][1];
        
-        if (validateMovement(map, new_row, new_column)) {
+        if (validPosition(map, new_row, new_column)) {
             map.board[robot.Rx][robot.Ry] = '*';
            
             robot.Rx = new_row;
