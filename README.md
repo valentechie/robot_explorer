@@ -8,8 +8,7 @@ The program will terminate when all the cells of the board have been visited or 
 In addition, the final result of the program must be printed in a file called **output.txt**.
 
 ## Demo
-![video](https://github.com/user-attachments/assets/f4eda641-aeca-4b07-804c-f2a002dfe4ae)
-
+![terminal](https://github.com/user-attachments/assets/74d541f2-4796-483f-981c-050d73efb945)
 
 ## Installation
 
