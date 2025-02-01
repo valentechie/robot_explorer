@@ -1,7 +1,11 @@
 # Simulation of a Robot Explorer on a Board with Obstacles
 
 ## Introduction
-C++ program that simulates a robot moving around a board. 
+C++ program that simulates a robot moving around a map. The dimensions of the board, the initial position of the robot and the obstacles can be found in the **input.txt** file. 
+
+The program will terminate when all the cells of the board have been visited or when the robot cannot move to any free cell. The number of free and occupied cells of the board should be displayed on the screen. 
+
+In addition, the final result of the program must be printed in a file called **output.txt**.
 
 ## Demo
 
