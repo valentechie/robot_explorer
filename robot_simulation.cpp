@@ -67,7 +67,7 @@ int main() {
 
         std::cout << "Press Enter to continue . . .";
         std::cin.get();
-        system("cls"); // or "cls" for windows
+        system("clear"); // or "cls" for windows
 
         moveRobot(mymap, robot);
     }
