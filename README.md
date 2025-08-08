@@ -18,7 +18,6 @@
 - [Project Context](#-project-context)
 - [Contributing](#-contributing)
 - [License](#-license)
-- [Credits](#-credits)
 
 ---
 
@@ -150,12 +149,5 @@ Contributions are welcome!
 
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
 See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Credits
-
-Developed by [valentechie](https://github.com/valentechie).  
-Special thanks to URJC and the course instructors.
 
 ---
