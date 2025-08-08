@@ -1,7 +1,7 @@
 # 🤖 Simulation of a Robot Explorer on a Board with Obstacles
 
 [![GPL-3.0 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-![Language](https://img.shields.io/badge/C%2B%2B-17%2B-blue)
+![Language](https://img.shields.io/badge/C%2B%2B-purple)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 ---
@@ -24,9 +24,11 @@
 
 ## 🚀 Introduction
 
-**Robot Explorer Simulator** is a C++ program that simulates a robot navigating a customizable board filled with obstacles.  
-You define the board size, the robot’s starting position, and obstacles in **`input.txt`**.  
-The program explores the board, marking visited cells, and outputs the results to **`output.txt`** and the terminal.
+C++ program that simulates a robot moving around a map. The dimensions of the board, the initial position of the robot and the obstacles can be found in the **`input.txt`** file. The user **can modify the data** in the input.txt file to make the game more dynamic.
+
+The program will terminate when all the cells of the board have been visited or when the robot cannot move to any free cell. The number of free and occupied cells of the board should be displayed on the screen.
+
+In addition, the final result of the program must be printed in a file called **`output.txt`**.
 
 ---
 
@@ -53,9 +55,10 @@ See **`output.txt`** for the results.
 
 ## 🛠️ Requirements
 
-- **Compiler:** g++ >= 9.0
-- **Language:** C++17 or higher
-- **OS:** Linux or macOS (untested on Windows)
+- **Compiler:** Any modern C++ compiler 
+- **Language Standard:** C++
+- **Operating System:** Linux  
+  > *May also work on macOS or Windows with minor adjustments*
 
 ---
 
