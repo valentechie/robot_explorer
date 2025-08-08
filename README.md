@@ -107,8 +107,8 @@ g++ robot_simulation.cpp -o robot_simulation
 ```
 5 5          # Board size (rows cols)
 2 2          # Robot starting position (row col)
-1 0 0        # Obstacle at (row col)
-1 3 1        # Obstacle at (row col)
+1 0          # Obstacle at (row col)
+1 3          # Obstacle at (row col)
 ```
 
 **Example `output.txt`:**
