@@ -8,13 +8,11 @@
 
 ## 📚 Table of Contents
 - [Introduction](#-introduction)
-- [Quick Start](#-quick-start)
 - [Demo](#-demo)
 - [Requirements](#-requirements)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [File Overview](#-file-overview)
-- [Example Input/Output](#-example-inputoutput)
 - [Project Context](#-project-context)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -28,19 +26,6 @@ C++ program that simulates a robot moving around a map. The dimensions of the bo
 The program will terminate when all the cells of the board have been visited or when the robot cannot move to any free cell. The number of free and occupied cells of the board should be displayed on the screen.
 
 In addition, the final result of the program must be printed in a file called **`output.txt`**.
-
----
-
-## ⚡ Quick Start
-
-```bash
-git clone https://github.com/valentechie/robot_explorer.git
-cd robot_explorer
-g++ robot_simulation.cpp -o robot_simulation
-./robot_simulation
-```
-Edit **`input.txt`** as needed before running.  
-See **`output.txt`** for the results.
 
 ---
 
@@ -88,9 +73,35 @@ g++ robot_simulation.cpp -o robot_simulation
 ## 🕹️ Usage
 
 - Edit **`input.txt`** to set the board size, robot's starting position, and obstacles.
+  
+  **Example `input.txt`:**
+  ```
+  5 5          # Board size (rows cols)
+  2 2          # Robot starting position (row col)
+  1 0          # Obstacle at (row col)
+  1 3          # Obstacle at (row col)
+  ```
+
 - Run the program.  
 - Results are displayed on the terminal and saved in **`output.txt`**.
+  
+  **Example `output.txt`:**
+  ```
+  Total free cells visited: 23
+  Total obstacles encountered: 2
 
+  Final board state:
+  . . X . .
+  . . . . .
+  . . R . .
+  . . . . .
+  . X . . .
+  ```
+
+  **Legend:**  
+  - `R` = Robot  
+  - `X` = Obstacle  
+  - `.` = Free cell
 ---
 
 ## 📁 File Overview
@@ -98,34 +109,6 @@ g++ robot_simulation.cpp -o robot_simulation
 - **`robot_simulation.cpp`**: Main source code for simulation logic.
 - **`input.txt`**: Configuration for the board and robot.
 - **`output.txt`**: Final results after running the program.
-
----
-
-## 📝 Example Input/Output
-
-**Example `input.txt`:**
-```
-5 5          # Board size (rows cols)
-2 2          # Robot starting position (row col)
-1 0          # Obstacle at (row col)
-1 3          # Obstacle at (row col)
-```
-
-**Example `output.txt`:**
-```
-Total free cells visited: 23
-Total obstacles encountered: 2
-Final board state:
-. . X . .
-. . . . .
-. . R . .
-. . . . .
-. X . . .
-```
-Legend:  
-- `R` = Robot  
-- `X` = Obstacle  
-- `.` = Free cell
 
 ---
 
