@@ -76,10 +76,10 @@ g++ robot_simulation.cpp -o robot_simulation
   
   **Example `input.txt`:**
   ```
-  5 5          # Board size (rows cols)
-  2 2          # Robot starting position (row col)
-  1 0          # Obstacle at (row col)
-  1 3          # Obstacle at (row col)
+  5 5          # Board size, rows(5) cols(5)
+  2 2          # Robot starting position, row (2) col(2)
+  1 0          # Obstacle at row (1) col (0)
+  1 3          # Obstacle at row (1) col (3)
   ```
 
 - Run the program.  
@@ -88,20 +88,21 @@ g++ robot_simulation.cpp -o robot_simulation
   **Example `output.txt`:**
   ```
   Total free cells visited: 23
-  Total obstacles encountered: 2
+  Total Occupied cells: 2
 
   Final board state:
-  . . X . .
+  R # . . .
+  * . . . .
+  * * * . .
+  . # . . .
   . . . . .
-  . . R . .
-  . . . . .
-  . X . . .
   ```
 
   **Legend:**  
   - `R` = Robot  
-  - `X` = Obstacle  
+  - `#` = Obstacle  
   - `.` = Free cell
+  - `*` = Occupied cell
 ---
 
 ## 📁 File Overview
@@ -130,7 +131,4 @@ Contributions are welcome!
 
 ## 📄 License
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
-See the [LICENSE](LICENSE) file for details.
-
----
+This project is licensed under the [GPL-3.0](LICENSE)
