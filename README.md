@@ -2,7 +2,6 @@
 
 [![GPL-3.0 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 ![Language](https://img.shields.io/badge/C%2B%2B-purple)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 ---
 
@@ -11,10 +10,7 @@
 - [Demo](#-demo)
 - [Installation](#-installation)
 - [Usage](#-usage)
-- [File Overview](#-file-overview)
 - [Project Context](#-project-context)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
@@ -37,27 +33,19 @@ In addition, the final result of the program must be printed in a file called `o
 ---
 
 ## 📦 Installation
-
-**1️⃣ Clone the repository:**
 ```bash
+# Clone the repository:
 git clone https://github.com/valentechie/robot_explorer.git
-```
 
-**2️⃣ Navigate to the project folder:**
-```bash
+# Navigate to the project folder:
 cd robot_explorer
-```
 
-**3️⃣ Compile the code:**
-```bash
+# Compile the code:
 g++ robot_simulation.cpp -o robot_simulation
-```
 
-**4️⃣ Run the program:**
-```bash
+# Run the program:
 ./robot_simulation
 ```
-
 ---
 
 ## 🕹️ Usage
@@ -95,30 +83,7 @@ g++ robot_simulation.cpp -o robot_simulation
   - `*` = Occupied cell
 ---
 
-## 📁 File Overview
-
-- `robot_simulation.cpp`: Main source code for simulation logic.
-- `input.txt`: Configuration for the board and robot.
-- `output.txt`: Final results after running the program.
-
----
-
 ## 🎓 Project Context
 
 Developed as the final assignment for **Fundamentos de la Programación** at URJC.  
 This project helped consolidate key programming concepts and practical C++ experience.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!  
-- Fork this repository  
-- Open issues for bugs or ideas  
-- Submit pull requests to improve the project
-
----
-
-## 📄 License
-
-This project is licensed under the [GNU General Public License v3.0 (GPL-3.0)](LICENSE)
