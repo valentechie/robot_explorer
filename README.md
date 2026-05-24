@@ -1,20 +1,6 @@
 # 🤖 Simulation of a Robot Explorer on a Board with Obstacles
 
-[![GPL-3.0 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-![Language](https://img.shields.io/badge/C%2B%2B-purple)
-
----
-
-## 📚 Table of Contents
-- [Introduction](#-introduction)
-- [Demo](#-demo)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Project Context](#-project-context)
-
----
-
-## 🚀 Introduction
+## Introduction
 
 C++ program that simulates a robot moving around a map. The dimensions of the board, the initial position of the robot and the obstacles can be found in the `input.txt` file. The user **can modify the data** in the input.txt file to make the game more dynamic.
 
@@ -24,7 +10,7 @@ In addition, the final result of the program must be printed in a file called `o
 
 ---
 
-## 🎬 Demo
+## Demo
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/74d541f2-4796-483f-981c-050d73efb945" width="500"/>
@@ -32,7 +18,7 @@ In addition, the final result of the program must be printed in a file called `o
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 # Clone the repository:
 git clone https://github.com/valentechie/robot_explorer.git
@@ -48,7 +34,7 @@ g++ robot_simulation.cpp -o robot_simulation
 ```
 ---
 
-## 🕹️ Usage
+## Usage
 
 - Edit `input.txt` to set the board size, robot's starting position, and obstacles.
   
@@ -83,7 +69,7 @@ g++ robot_simulation.cpp -o robot_simulation
   - `*` = Occupied cell
 ---
 
-## 🎓 Project Context
+## Project Context
 
 Developed as the final assignment for **Fundamentos de la Programación** at URJC.  
 This project helped consolidate key programming concepts and practical C++ experience.
