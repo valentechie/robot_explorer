@@ -39,7 +39,7 @@ int main() {
     Board mymap;
     int n_rows = 0, m_columns = 0, robot_rows = 0, robot_columns = 0;
     
-    std::string archive = "input.txt";
+    std::string archive = "data/input.txt";
     readFile(archive, n_rows, m_columns, robot_rows, robot_columns, obstacles, num_obstacles);
     
     mymap.rows = n_rows;
@@ -76,7 +76,7 @@ int main() {
     std::cout << "Occupied cells " << currentState(mymap, '*') << std::endl;
     std::cout << "Free cells: " << currentState(mymap, '.') << std::endl;
 
-    std::ofstream write_output ("output.txt");
+    std::ofstream write_output ("data/output.txt");
     assert(write_output.is_open());
     for (int i = 0; i < mymap.rows; i++) {
         for (int j = 0; j < mymap.columns; j++) {
