@@ -1,4 +1,4 @@
-# 🤖 Simulation of a Robot Explorer on a Board with Obstacles
+# Simulation of a Robot on a Board with Obstacles
 
 ## Introduction
 
